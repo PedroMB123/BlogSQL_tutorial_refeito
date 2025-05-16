@@ -1,0 +1,22 @@
+<table>
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nome</th>
+      <th scope="">Email</th>
+      <th scope="col">Tel</th>
+      <th scope="col">Password</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% let index=1; dados.forEach(user => { %>
+      <tr <%- req.session.username==user.username ? `style="color: white; font-style: bold;"` : `` %>>
+        <td><%= user.id %></td>
+        <td><%= user.username %></td>
+        <td><%= user.email %></td>
+        <td><%= user.tel %></td>
+        <td><%= user.password %></td>
+      </tr>
+      <% index++; }); %>
+  </tbody>
+</table>
