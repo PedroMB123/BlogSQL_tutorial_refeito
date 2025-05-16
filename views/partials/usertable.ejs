@@ -9,15 +9,15 @@
     </tr>
   </thead>
   <tbody>
-    <% for (let index = 0; i < dados.lleenght; index++) %> { 
-      <tr <%- req.session.username==user.username ? `style="color: white; font-style: bold;"` : `` %>>
-            <td><%= user.id %></td>
-            <td><%= user.username %></td>
-            <td><%= user.email %></td>
-            <td><%= user.tel %></td>
-            <td><%= user.password %></td>
+    <% for ( let i = 0; i < dados.length; i++) { %>
+      <tr <%- req.session.username==dados[i].username ? `style="color: white; font-style: bold;"` : `` %>>
+            <td><%= dados[i].id %></td>
+            <td><%= dados[i].username %></td>
+            <td><%= dados[i].email %></td>
+            <td><%= dados[i].tel %></td>
+            <td><%= dados[i].password %></td>
           </tr>
-    }
+   <% } %>
   </tbody>
 </table>
 

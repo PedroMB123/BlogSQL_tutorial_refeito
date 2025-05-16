@@ -180,10 +180,11 @@ app.get("/dashboard", (req, res) => {
   if (req.session.logged) {
     db.all("SELECT * FROM users", [], (err, row) => {
       if (err) throw err;
+      console.log(row);
       res.render("pages/dashboard", { ...config, dados: row, req: req });
     });
   } else {
-    res.redirect("/");
+    res.redirect("/erro");
   }
 });
 
